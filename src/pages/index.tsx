@@ -8,6 +8,9 @@ export default function Home() {
   return (
     <div>
       {/* <Navbar/> */}
+      {/* <Head>
+        <title>Home</title>
+      </Head> */}
       <div>
       hello world! fikar
       </div>
