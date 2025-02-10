@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-interface NavHeaderProps {
+export interface NavHeaderProps {
   title: string;
   url: string;
 }

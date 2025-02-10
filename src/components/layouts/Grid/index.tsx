@@ -1,21 +1,22 @@
-import Card, { CardItem } from "@/components/elements/Card";
-import { useState } from "react";
+import Card from "@/components/elements/Card";
 
-export default function CardGrid() {
-  const [cardData, setCardData] = useState<CardItem[]>([
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-    { title: "Card 1", subDesc: "string", desc: "string", imageUrl: "" },
-  ]);
+export interface HeroItem {
+  name: string;
+  birth_year: number;
+  death_year: number | null;
+  description: string;
+  ascension_year: number;
+}
 
+interface CardGridProps {
+  data: HeroItem[];
+}
+
+export default function CardGrid({ data }: CardGridProps) {
   return (
     <div className="grid-container">
-      {cardData.map((card, index) => (
-        <Card key={index} {...card}/>
+      {data.map((hero, index) => (
+        <Card key={index} {...hero} />
       ))}
     </div>
   );
