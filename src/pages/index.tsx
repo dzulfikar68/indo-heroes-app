@@ -1,9 +1,12 @@
-import HomeView from "@/views/Home";
+import Container from "@/components/layouts/Container";
+import HomeViews from "@/views/Home";
 
 export default function Home() {
   return (
     <>
-      <HomeView />
+      <Container>
+        <HomeViews />
+      </Container>
     </>
   );
 }

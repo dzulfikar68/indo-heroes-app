@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import Navbar from "../Navbar";
+// import Navbar from "../Navbar";
+import HeaderView from "@/views/Home/Header";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -17,7 +18,8 @@ const AppShell = (props: AppShellProps) => {
   // console.log(router)
   return (
     <main>
-      {!disableNavbar.includes(pathname) && <Navbar />}
+      {!disableNavbar.includes(pathname) && <HeaderView/> }
+      {/* <Navbar /> */}
       {children}
       {/* <>footer</> */}
     </main>

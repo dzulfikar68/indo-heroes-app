@@ -1,11 +1,14 @@
-import AboutView from "@/views/About";
+import Container from "@/components/layouts/Container";
+import AboutViews from "@/views/About";
 
 const AboutPage = () => {
-    return (
-        <>
-        <AboutView/>
-        </>
-    )
+  return (
+    <>
+      <Container>
+        <AboutViews />
+      </Container>
+    </>
+  );
 };
 
 export default AboutPage;

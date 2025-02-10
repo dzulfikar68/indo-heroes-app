@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-const AboutView = () => {
+const AboutViews = () => {
   return (
-    <div>
+    <div className="top_container">
       <Head>
         <title>About</title>
       </Head>
@@ -11,4 +11,4 @@ const AboutView = () => {
   );
 };
 
-export default AboutView;
+export default AboutViews;
