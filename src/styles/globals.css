@@ -24,7 +24,7 @@ a {
 .header {
   padding: 30px;
   text-align: center;
-  font-size: 35px;
+  /* font-size: 35px; */
 }
 
 /* Container for flexboxes */
@@ -73,11 +73,27 @@ a {
 
 .card {
   background: white;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+
+  overflow: hidden;
 }
+
+.card img {
+  width: 100%; /* Menempel ke kanan dan kiri */
+  height: 180px; /* Tinggi tetap */
+  object-fit: cover; /* Crop gambar agar tetap proporsional */
+  display: block; /* Menghindari whitespace ekstra */
+}
+
+/* width: 100%;
+max-width: 300px;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 
 /* .grid-container {
   display: grid;
