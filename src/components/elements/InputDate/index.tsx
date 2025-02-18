@@ -23,7 +23,7 @@ export default function InputDate({
             <label className="block text-sm font-medium">{title}</label>
             <input
               type="number"
-              min="1900" max="2100" step="1" placeholder="YYYY"
+              min="1900" max="2100" step="1" placeholder="YYYY" maxLength={4}
               name={name}
               value={date}
               onChange={onDateChange}

@@ -10,7 +10,7 @@ export default function RadioGroup({ selected, onSelect }: RadioGroupProps) {
   return (
     <div className="mb-4">
       {/* <h3 className="text-lg font-bold">Filter</h3> */}
-      <div className="grid grid-cols-3 gap-2 mt-2">
+      <div className="grid grid-cols-3 gap-2 mt-2 mb-5">
         {TypeFilter.map((item, index) => (
           <RadioButton
             key={index}

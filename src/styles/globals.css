@@ -130,3 +130,15 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     color-scheme: dark;
   }
 } */
+
+.chip-black {
+  @apply bg-slate-800 rounded-md py-1 px-3 border border-transparent text-sm text-white transition-all shadow-sm;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

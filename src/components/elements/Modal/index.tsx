@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import RadioGroup from "../RadioGroup";
 import InputDate from "../InputDate";
+import { useShowStore } from "@/views/Home/useShowStore";
 
 export interface FormState {
   query: string;
@@ -59,8 +60,13 @@ export default function ModalForm({
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
+  const { isShow, setIsShow } = useShowStore();
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isShow) {
+      setIsShow(true);
+    }
     onSubmit(formState);
     // setSubmittedData(formState);
     onClose();
@@ -95,7 +101,7 @@ export default function ModalForm({
         <form onSubmit={handleSubmit}>
           <RadioGroup selected={formState.type} onSelect={handleSelect} />
           <div className="mb-4">
-            {(!showDates) && (
+            {(!showDates && formState.type !== TypeFilter[0]) && (
               <div className="mb-4">
                 <label className="block text-sm font-medium">Search</label>
                 <input
@@ -112,13 +118,13 @@ export default function ModalForm({
               <>
                 <InputDate
                   name="startDate"
-                  title="Start Date"
+                  title="Start Year"
                   date={formState.startDate}
                   onDateChange={handleChange}
                 />
                 <InputDate
                   name="endDate"
-                  title="End Date"
+                  title="End Year"
                   date={formState.endDate}
                   onDateChange={handleChange}
                 />
