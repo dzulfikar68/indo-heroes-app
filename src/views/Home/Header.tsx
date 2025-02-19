@@ -34,6 +34,12 @@ export default function HeaderView() {
         >
           <i className="fa fa-search"></i>
         </a>
+        <a
+          href="https://github.com/dzulfikar68/indo-heroes-app#"
+          className="w3-padding-large w3-hover-blue w3-hide-small w3-right"
+        >
+          <i className="fa fa-github"></i>
+        </a>
       </div>
       <ModalForm initialData={submittedData} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={(data: FormState) => {
           console.log(data);
