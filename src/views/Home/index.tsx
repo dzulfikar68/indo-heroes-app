@@ -183,7 +183,7 @@ export default function HomeViews() {
             style={handleHidingListContent()}
             className="flex justify-center items-center"
           >
-            <b>List Empty</b>
+            <b><i>List Empty</i></b>
           </div>
           <CardGrid data={heroes} />
         </div>
