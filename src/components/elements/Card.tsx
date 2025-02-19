@@ -8,6 +8,8 @@
 
 import { HeroItem } from "../layouts/Grid";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import { getPhotoUrl } from "@/utils/getPhotoUrl";
 
 export default function Card({
   name,
@@ -16,6 +18,18 @@ export default function Card({
   description,
   ascension_year,
 }: HeroItem) {
+
+  const [photoUrl, setPhotoUrl] = useState<string>("/photo-default.jpg");
+
+  useEffect(() => {
+    const fetchPhoto = async () => {
+      const url = await getPhotoUrl(name);
+      if (url) setPhotoUrl(url); // Jika ada URL, pakai URL dari JSON
+    };
+
+    fetchPhoto();
+  }, [name]);
+
   return (
     <div
       className="card"
@@ -27,7 +41,7 @@ export default function Card({
       })}
       style={{ cursor: "pointer" }}
     >
-      <img src="/photo-default.jpg" alt={name} />
+      <img src={photoUrl} alt={name} />
       <div className="p-4">
         <h1><b>{name}</b></h1>
         <h6>
